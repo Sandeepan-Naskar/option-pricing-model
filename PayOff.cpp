@@ -2,15 +2,13 @@
 #define __PAY_OFF_CPP
 
 #include "PayOff.h"
-#include "iostream"
-using namespace std;
 
 // PAY OFF CALL Implementation
 PayOffCall::PayOffCall(const double _K) { K=_K; }
 PayOffCall::~PayOffCall() {}
 
 double PayOffCall::operator() (const double S) const {
-    return max(S-K, 0.0);
+    return std::max(S-K, 0.0);
 }
 
 // PAY OFF PUT Implementation
